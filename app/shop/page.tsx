@@ -9,8 +9,10 @@ export default async function ShopPage({
 }: {
   searchParams: any;
 }) {
-  const urlSearchParams = new URLSearchParams(searchParams);
-  const page = urlSearchParams.get("page") || "1";
+  const urlSearchParams = searchParams
+    ? new URLSearchParams(searchParams)
+    : null;
+  const page = urlSearchParams ? urlSearchParams.get("page") : "1";
   const productResponse = await fetchProducts({
     page: Number(page),
     take: LIMIT_PRODUCTS,
