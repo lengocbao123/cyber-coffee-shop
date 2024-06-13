@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { PlusCircle } from "lucide-react";
 import Link from "next/link";
 import slugify from "react-slugify";
-import { Product } from "@prisma/client";
 import { IProduct } from "@/data/products";
 
 
