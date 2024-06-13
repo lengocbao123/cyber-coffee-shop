@@ -4,17 +4,9 @@ import Sort from "@/components/filter/Sort";
 import ProductList from "@/components/product/ProductList";
 import { fetchProducts } from "@/services/products";
 const LIMIT_PRODUCTS = 12;
-export default async function ShopPage({
-  searchParams,
-}: {
-  searchParams: any;
-}) {
-  const urlSearchParams = searchParams
-    ? new URLSearchParams(searchParams)
-    : null;
-  const page = urlSearchParams ? urlSearchParams.get("page") : "1";
+export default async function ShopPage() {
   const productResponse = await fetchProducts({
-    page: Number(page),
+    page: Number(1),
     take: LIMIT_PRODUCTS,
   });
 
