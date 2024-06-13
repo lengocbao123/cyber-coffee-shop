@@ -6,7 +6,6 @@ import ProductPrice from "@/components/product/ProductPrice";
 import RelatedProductList from "@/components/product/RelatedProductList";
 import { cn } from "@/lib/utils";
 import { getProductById } from "@/services/products";
-import { faker } from "@faker-js/faker";
 import Image from "next/image";
 
 export default async function ProductPage({
@@ -38,7 +37,7 @@ export default async function ProductPage({
         />
       </div>
       <div className="space-y-5">
-        {product.productOption?.map((option) => (
+        {product.options?.map((option) => (
           <ProductOption key={option.id} option={option} />
         ))}
         <ProductPrice product={product} />

@@ -1,5 +1,6 @@
-import { Category, Product } from "@prisma/client";
 
+
+import { Category, Product } from "@/prisma/generated/client";
 import { IPageMetaResponse } from "./pageMeta";
 export interface IFetchProductsQuery {
 	page: number;
@@ -14,7 +15,7 @@ export interface IListProductResponse extends IPageMetaResponse<IProduct> {
 }
 export interface IProduct extends Product {
 	category: Category;
-	productOption?: IProductOption[];
+	options?: IProductOption[];
 }
 
 export interface IProductOption

@@ -1,4 +1,5 @@
 import { db } from "@/lib/db";
+import { faker } from "@faker-js/faker";
 import { NextResponse } from "next/server";
 const LIMIT = 20;
 export async function GET(req: Request) {
@@ -41,12 +42,24 @@ export async function GET(req: Request) {
 }
 export async function POST(req: Request) {
   try {
-    const body = await req.json();
-    const product = await db.product.create({
-      data: body,
+    const products = await db.product.findMany({
+      where: {},
+    });
+    await db.productVariant.createMany({
+      data: products.map(
+        (product) =>
+          ({
+            id: product.id + 20,
+            productId: product.id,
+            images:
+              "http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg",
+            price: parseInt(faker.commerce.price({ max: 100 })),
+            quantity: faker.number.int(100),
+          } as any)
+      ),
     });
 
-    return NextResponse.json(product);
+    return NextResponse.json(products);
   } catch (error) {
     console.log("PRODUCT_POST", error);
     return new NextResponse("Internal Error", { status: 500 });

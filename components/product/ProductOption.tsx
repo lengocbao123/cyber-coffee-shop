@@ -1,5 +1,4 @@
-import { IProduct, IProductOption } from "@/data/products";
-import { faker } from "@faker-js/faker";
+import { IProductOption } from "@/data/products";
 import { Toggle } from "@/components/ui/toggle";
 
 const ProductOption = ({ option }: { option: IProductOption }) => (

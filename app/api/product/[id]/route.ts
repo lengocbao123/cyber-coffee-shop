@@ -9,12 +9,10 @@ export async function GET(
     const product = await db.product.findUnique({
       where: {
         id: parseInt(id),
-        productOption: {},
       },
       include: {
         category: true,
-        contents: true,
-        productOption: {
+        options: {
           select: {
             option: {
               select: {
@@ -36,7 +34,7 @@ export async function GET(
     return new NextResponse(
       JSON.stringify({
         ...product,
-        productOption: product?.productOption.map((e) => e.option),
+        options: product?.options.map((o) => o.option),
       }),
       { status: 200 }
     );
