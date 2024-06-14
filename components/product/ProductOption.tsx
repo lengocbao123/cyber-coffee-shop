@@ -1,7 +1,7 @@
-import { IProductOption } from "@/data/products";
+import { Option } from "@/data/products";
 import { Toggle } from "@/components/ui/toggle";
 
-const ProductOption = ({ option }: { option: IProductOption }) => (
+const ProductOption = ({ option }: { option: Option }) => (
   <div className="w-full space-y-3">
     <h2 className="text-sm font-semibold capitalize">{option.name}</h2>
     <div className="flex gap-5">

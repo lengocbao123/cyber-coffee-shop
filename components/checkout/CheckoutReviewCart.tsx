@@ -36,10 +36,10 @@ const CheckoutReviewCart = observer(() => {
           <TableBody>
             {store.cartStore.items.map((item) => (
               <CartItem
-                key={item.id}
+                key={item.id!}
                 item={item}
                 onUpdateQuantity={(quantity) =>
-                  store.cartStore.updateQuantity(item.id, quantity)
+                  store.cartStore.updateQuantity(item.id!, quantity)
                 }
                 onRemove={() => store.cartStore.removeFromCart(item)}
               />

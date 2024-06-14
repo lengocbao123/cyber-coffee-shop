@@ -1,29 +1,57 @@
-import {
-  IFetchProductsQuery,
-  IListProductResponse,
-  IProduct,
-} from "@/data/products";
-import { fetcher } from "@/lib/fetcher";
+"use server"
+import { DataResult, PageMeta, PageMetaResponse } from "@/data/pageMeta";
+import { db } from "@/lib/db";
 
-export const fetchProducts = async (query: IFetchProductsQuery) => {
-  const searchParams = new URLSearchParams();
-  searchParams.set("page", query.page.toString());
-  searchParams.set("take", query.take.toString());
-  if (query.name) {
-    searchParams.set("name", query.name);
-  }
-  if (query.createdAt) {
-    searchParams.set("createdAt", query.createdAt);
-  }
-  if (query.categoryIds && query.categoryIds.length > 0) {
-    searchParams.set("categoryIds", query.categoryIds.join(","));
-  }
+export const getProductById = async (id: number) => {
+	const data = await db.product.findUnique({
+		where: {
+			id,
+		},
+		include: {
+			category: true,
+			options: {
+				select: {
+					option: {
+						select: {
+							id: true,
+							name: true,
+							optionValue: {
+								select: {
+									id: true,
+									name: true,
+								},
+							},
+						},
+					},
+				},
+			},
+		},
+	});
+	return new DataResult({
+		...data,
+		options: data?.options.map((value) => value.option),
+	});
+};
 
-  return fetcher<IListProductResponse>(`product?${searchParams.toString()}`);
+export const getProducts = async ({
+	page,
+	take,
+}: {
+	page: number;
+	take: number;
+}) => {
+	const total = await db.product.count({});
+	const data = await db.product.findMany({
+		where: {},
+		include: {
+			category: {
+				select: { name: true },
+			},
+		},
+		skip: (page - 1) * take,
+		take,
+	});
+	const meta = new PageMeta(page, take, total);
+	return new PageMetaResponse(data, meta);
 };
-export const getProductById = (id: number) => {
-  return fetcher<IProduct>(`product/${id}`);
-};
-export const getRelativeProducts = async (id: number) => {
-  return fetcher<IProduct[]>(`product/${id}/related`);
-};
+

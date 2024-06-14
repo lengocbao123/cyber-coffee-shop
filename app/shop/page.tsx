@@ -2,10 +2,10 @@ import AppPagination from "@/components/AppPagination";
 import Filter from "@/components/filter";
 import Sort from "@/components/filter/Sort";
 import ProductList from "@/components/product/ProductList";
-import { fetchProducts } from "@/services/products";
+import { getProducts } from "@/services/products";
 import { Suspense } from "react";
 export default async function ShopPage() {
-  const productResponse = await fetchProducts({
+  const productResponse = await getProducts({
     page: 1,
     take: 8,
   });

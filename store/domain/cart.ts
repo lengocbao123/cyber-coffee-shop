@@ -1,8 +1,9 @@
 "use client";
-import { IProduct } from "@/data/products";
+import { Product } from "@/data/products";
 import { makeAutoObservable } from "mobx";
 import { RootStore } from "@/store";
-export interface ICartItem extends IProduct {
+export interface ICartItem
+  extends Pick<Product, "id" | "name" | "thumbnail" | "price"> {
   quantity: number;
 }
 export class CartStore {
@@ -17,7 +18,7 @@ export class CartStore {
   get totalPrice() {
     let totalPrice = 0;
     this.items.forEach((item) => {
-      totalPrice += item.price * item.quantity;
+      totalPrice += item?.price! * item.quantity;
     });
     return totalPrice;
   }

@@ -13,7 +13,7 @@ export default async function ProductPage({
 }: {
   params: { slug: string; productId: string };
 }) {
-  const product = await getProductById(Number(params.productId));
+  const { data: product } = await getProductById(Number(params.productId));
   if (!product) {
     return <div>Product no found.</div>;
   }
@@ -27,8 +27,8 @@ export default async function ProductPage({
 
       <div className="p-1 h-fit bg-gray-100 border rounded-lg">
         <Image
-          src={product.thumbnail}
-          alt={product.name}
+          src={product?.thumbnail!}
+          alt={product?.name!}
           width={460}
           height={427}
           className={cn(

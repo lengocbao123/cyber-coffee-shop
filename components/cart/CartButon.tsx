@@ -5,7 +5,6 @@ import { Button } from "../ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { ShoppingCartIcon } from "lucide-react";
 import CartItem from "./CartItem";
-import { Fragment } from "react";
 import Link from "next/link";
 import { Table, TableCell, TableFooter, TableRow } from "../ui/table";
 
@@ -36,7 +35,7 @@ const CartButton = observer(() => {
                 key={item.id}
                 item={item}
                 onUpdateQuantity={(quantity) =>
-                  store.cartStore.updateQuantity(item.id, quantity)
+                  store.cartStore.updateQuantity(item.id!, quantity)
                 }
                 onRemove={() => store.cartStore.removeFromCart(item)}
               />

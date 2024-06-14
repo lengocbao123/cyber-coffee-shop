@@ -1,4 +1,4 @@
-import { IProduct } from "@/data/products";
+import { Product } from "@/data/products";
 import { faker } from "@faker-js/faker";
 import {
   Collapsible,
@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/collapsible";
 import { Plus } from "lucide-react";
 
-const ProductInformation = ({ product }: { product: IProduct }) => (
+const ProductInformation = ({ product }: { product: Product }) => (
   <Collapsible>
     <CollapsibleTrigger className="flex w-full justify-between items-center pt-3 mb-2">
       <span>Product Information</span>

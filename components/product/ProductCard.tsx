@@ -5,22 +5,22 @@ import { Button } from "@/components/ui/button";
 import { PlusCircle } from "lucide-react";
 import Link from "next/link";
 import slugify from "react-slugify";
-import { IProduct } from "@/data/products";
+import { Product } from "@/data/products";
 
 
 const ProductCard = ({
   product,
   onAddToCart,
 }: {
-  product: IProduct;
+  product: Product;
   onAddToCart?: () => void;
 }) => {
   return (
     <div className="space-y-4 shadow-lg rounded-lg overflow-hidden h-fit">
       <div className="overflow-hidden">
         <Image
-          src={product.thumbnail}
-          alt={product.name}
+          src={product.thumbnail!}
+          alt={product.name!}
           width={150}
           height={150}
           className={cn(
@@ -31,7 +31,7 @@ const ProductCard = ({
       <div className="flex gap-2 p-4">
         <div className="flex-grow space-y-1 text-sm">
           <p className="text-sx text-muted-foreground capitalize">
-            {product.category.name}
+            {product?.category?.name}
           </p>
           <Link
             href={`/product/${product.id}/${slugify(product.name)}`}

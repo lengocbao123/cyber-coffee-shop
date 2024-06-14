@@ -3,7 +3,7 @@
 import ProductCard from "./ProductCard";
 import { useStore } from "../provider/StoreProvider";
 import { Skeleton } from "../ui/skeleton";
-import { IProduct } from "@/data/products";
+import { Product, Products } from "@/data/products";
 
 const ProductList = ({
   products,
@@ -11,7 +11,7 @@ const ProductList = ({
   subTitle,
   isLoading = false,
 }: {
-  products: IProduct[];
+  products: Products;
   title?: string;
   subTitle?: string;
   isLoading?: boolean;
@@ -44,7 +44,7 @@ const ProductList = ({
           : products.map((product) => (
               <ProductCard
                 key={product.id}
-                product={product}
+                product={product as Product}
                 onAddToCart={() =>
                   store.cartStore.addToCart({ ...product, quantity: 1 })
                 }

@@ -1,12 +1,10 @@
-import { IProduct } from "@/data/products";
+import { Product } from "@/data/products";
 import ProductCard from "./ProductCard";
-import { getRelativeProducts } from "@/services/products";
+import { getProducts } from "@/services/products";
 
-const RelatedProductList = async ({ product }: { product: IProduct }) => {
-  const relativeProducts = await getRelativeProducts(product.id);
-  console.log({relativeProducts});
-  
- 
+const RelatedProductList = async ({ product }: { product: Product }) => {
+  const { data: relativeProducts } = await getProducts({ page: 1, take: 4 });
+
   return (
     <div className="flex flex-col items-center space-y-5">
       <h3 className="text-md">Related products</h3>
@@ -15,7 +13,7 @@ const RelatedProductList = async ({ product }: { product: IProduct }) => {
       </p>
       <div className="grid grid-cols-4 gap-5">
         {relativeProducts.map((product) => (
-          <ProductCard key={product.id} product={product} />
+          <ProductCard key={product.id} product={product as Product} />
         ))}
       </div>
     </div>

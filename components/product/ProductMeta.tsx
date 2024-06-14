@@ -1,10 +1,10 @@
-import { IProduct } from "@/data/products";
+import { Product } from "@/data/products";
 import { faker } from "@faker-js/faker";
 
-const ProductMeta = ({ product }: { product: IProduct }) => (
+const ProductMeta = ({ product }: { product: Product }) => (
   <div className="w-full space-y-3">
-    <h2 className="text-sm">{product.category.name}</h2>
-    <h1 className="text-2xl font-semibold">{product.name}</h1>
+    <h2 className="text-sm">{product.category?.name}</h2>
+    <h1 className="text-2xl font-semibold">{product?.name}</h1>
     <p className="text-sm text-justify">
       {faker.lorem.paragraph({ min: 4, max: 8 })}
     </p>
