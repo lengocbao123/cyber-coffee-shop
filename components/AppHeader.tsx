@@ -6,6 +6,7 @@ import { observer } from "mobx-react-lite";
 import { useStore } from "./provider/StoreProvider";
 import AccountMenu from "./AccountMenu";
 import AppDrawer from "./AppDrawer";
+import Image from "next/image";
 
 const AppHeader = observer(() => {
   const store = useStore();
@@ -16,26 +17,31 @@ const AppHeader = observer(() => {
           <div className="flex items-center">
             <Link
               href="/"
-              className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase"
+              className="font-extrabold hover:text-ui-fg-base uppercase"
             >
-              Cyber Store
+              <Image
+                alt=""
+                src="https://ik.imagekit.io/gsozk5bngn/categry/logo_eqKuR1pQE.png"
+                width={100}
+                height={60}
+              />
             </Link>
           </div>
           <div className="grow hidden sm:flex items-center gap-5">
-            <Link href="/shop" className="text-sm hover:text-primary">
+            <Link href="/shop" className="font-bold text-md hover:text-primary">
               Shop
             </Link>
-            <Link href="/" className="text-sm hover:text-primary">
+            <Link href="/" className="font-bold text-md hover:text-primary">
               Blogs
             </Link>
-            <Link href="/" className="text-sm hover:text-primary">
+            <Link href="/" className="font-bold text-md hover:text-primary">
               Contact Us
             </Link>
           </div>
           <div className="shrink hidden sm:flex items-center gap-x-3 h-full flex-1 basis-0 justify-end">
+            <AccountMenu />
             <CartButton />
             <AppLanguage language={store?.uiSettingStore.language} />
-            <AccountMenu />
           </div>
           <div className="block sm:hidden">
             <AppDrawer />

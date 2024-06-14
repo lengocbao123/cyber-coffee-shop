@@ -3,7 +3,7 @@ import { observer } from "mobx-react-lite";
 import { useStore } from "../provider/StoreProvider";
 import { Button } from "../ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
-import { ShoppingCartIcon } from "lucide-react";
+import { ShoppingBasket } from "lucide-react";
 import CartItem from "./CartItem";
 import Link from "next/link";
 import { Table, TableCell, TableFooter, TableRow } from "../ui/table";
@@ -18,14 +18,10 @@ const CartButton = observer(() => {
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <Button
-          className="flex items-center gap-1"
-          variant="outline"
-          size="icon"
-        >
-          <ShoppingCartIcon size={14} />
+        <button className="flex gap-1 items-center border-0 hover:bg-extend-8/10 p-2 rounded">
+          <ShoppingBasket size={16} />
           <span className="text-xs">{store.cartStore.totalQuantity}</span>
-        </Button>
+        </button>
       </PopoverTrigger>
       <PopoverContent className="w-[500px] px-2 space-y-4 divide-y">
         {store.cartStore.items.length > 0 ? (

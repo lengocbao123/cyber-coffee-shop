@@ -2,18 +2,13 @@ import { Button } from "./ui/button";
 
 const Promotion = () => {
   return (
-    <div className="w-full bg-no-repeat bg-cover bg-center flex flex-col items-end  bg-[url('https://ik.imagekit.io/gsozk5bngn/product/bg-10_EO-RYKBVg.jpeg')] min-h-[400px] md:min-h-[460px] lg:min-h-[500px] xl:min-h-[650px] py-20 py:pt-24">
-      <div className="w-full sm:w-[728px] flex flex-col items-start justify-center gap-6 px-4">
-        <span>Best Price For You</span>
-        <h1 className="text-6xl">
-          <span className="font-bold">Fresh Exotic Vegetables</span> <br />
-          in Our Store
+    <div className="px-8 w-full bg-no-repeat bg-cover bg-center flex flex-col items-end justify-center bg-[url('https://ik.imagekit.io/gsozk5bngn/product/11_dGO9yVqQQ.jpg')] min-h-[400px] md:min-h-[460px] lg:min-h-[300px] xl:min-h-[650px] py-20 py:pt-24">
+      <div className="w-full sm:w-[728px] flex flex-col items-end justify-center text-right gap-6 px-4">
+        <p className="text-md font-bold text-white">30% Sale</p>
+        <h1 className="text-6xl font-bold text-white">
+          Latest Exclusive Summer Collection
         </h1>
-        <p className="text-md">
-          The generated Lorem Ipsum is therefore always free from repetition
-          injected humour, or non-characteristic words etc.
-        </p>
-        <Button className="rounded-full" size="lg" variant="outline">BUY NOW</Button>
+        <Button>Shop now</Button>
       </div>
     </div>
   );
