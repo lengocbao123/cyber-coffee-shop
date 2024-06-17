@@ -360,6 +360,52 @@ VALUES
     (20, 4),
     (20, 5);
 
+INSERT INTO public."ProductVariant" ("productId",sku,images,price,quantity) VALUES
+	 (1,'9fcdb309-235a-4e56-9b62-2cbc100291ac','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',66,64),
+	 (2,'c832405b-1d3a-4bf6-9468-26cc6b3cf35b','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',86,41),
+	 (3,'9f37dd83-df83-4740-a900-0238db6d2197','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',1,30),
+	 (4,'65dec84d-046d-4b38-9ee2-55cbe328648c','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',36,81),
+	 (5,'7cec77de-1bbe-440f-adda-f467f232164f','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',92,57),
+	 (6,'27a2551b-d2d8-4323-af32-30d10037a0fe','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',16,26),
+	 (7,'c8a4a9b5-48d9-48a4-99f0-6b1aec446b0f','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',24,84),
+	 (8,'94e72ae2-9e52-444c-b640-54448090023c','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',1,12),
+	 (9,'868feb47-996b-4f05-af4b-537dd6c665b8','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',91,83),
+	 (10,'ec5ff3f7-0a95-402c-b9bb-eb40a304244f','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',78,33);
+INSERT INTO public."ProductVariant" ("productId",sku,images,price,quantity) VALUES
+	 (11,'47f2dc46-38fd-4da2-8c56-60d19c41dcbd','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',14,79),
+	 (12,'c622ad57-c4aa-4ad4-857b-9b2a495cbb7d','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',20,4),
+	 (13,'06fec225-0b7b-41de-b586-74cbc052b3e7','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',83,55),
+	 (14,'471870ba-385b-403e-8c26-afff253d0c2b','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',37,54),
+	 (15,'1f79bc2d-0f4b-4f89-8a61-3a6f7959f025','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',59,34),
+	 (16,'26b451bc-9a46-45d7-a11f-1638526a86e8','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',80,15),
+	 (17,'cf27e2d9-c5d4-4f0a-80c8-76699886b183','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',5,89),
+	 (18,'223c4ae9-7632-4252-a262-c9e70ab30d08','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',78,76),
+	 (19,'cd186926-88ae-437c-bfa4-c5a66aa8a567','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',79,29),
+	 (20,'a0014a9b-c8c2-41a5-a764-603c8f4e42a4','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',32,51);
+INSERT INTO public."ProductVariant" ("productId",sku,images,price,quantity) VALUES
+	 (1,'b43b97dd-8645-4df1-9691-ea8ca2d74fd9','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',100,25),
+	 (2,'d88521c4-6df2-4303-939f-94c0cabd6132','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',4,94),
+	 (3,'930c488b-0706-4521-9ed9-c06386c7d372','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',72,55),
+	 (4,'e837d14f-7b25-433e-a134-e327a77c0cd4','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',7,74),
+	 (5,'b140d84d-e1c0-4b98-a16a-aa664cf7316c','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',79,76),
+	 (6,'715d3212-4b98-463d-9801-6ca581e3933b','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',82,50),
+	 (7,'96ec954e-522c-4a3d-9f85-a2a5ee164031','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',86,71),
+	 (8,'aec74c64-be21-4dcf-a80d-4c42f9f79d16','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',18,86),
+	 (9,'8f3aa341-e417-4900-a6d1-fd5cceeb8304','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',56,14),
+	 (10,'bc980e4a-3067-4cdb-aa12-ea41a0f61bae','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',27,46);
+INSERT INTO public."ProductVariant" ("productId",sku,images,price,quantity) VALUES
+	 (11,'9dd69eb3-e61d-41a0-b267-558ca1939e28','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',6,11),
+	 (12,'f143d65b-f21c-4d80-8425-a34bf61b0682','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',5,88),
+	 (13,'5849ad8e-34d3-48be-8d4b-f69ea0aff673','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',23,42),
+	 (14,'b5bd789b-8d94-4c2c-9f20-af605aa742b3','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',35,57),
+	 (15,'55513f97-b6f6-4c21-a9a4-840f7a642b85','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',60,26),
+	 (16,'79af1e07-afca-40f6-ae6f-798dea9b09f3','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',25,18),
+	 (17,'d17247a9-7ec3-49e1-8acb-f0364f9824d9','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',71,1),
+	 (18,'5e5d1fef-d905-43c6-91b4-c5b30cdf9796','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',26,63),
+	 (19,'e4daad47-093e-4c12-a2c7-da3e466c7bb5','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',74,52),
+	 (20,'ac7e8bb1-e043-42d2-bf2e-6231270d892b','http://assets.myntassets.com/v1/images/style/properties/b65078ba0112f107d024a4e3c028c38b_images.jpg',28,88);
+
+
 INSERT INTO
     public."VariantValue" ("productId", "variantId", "optionId", "valueId")
 VALUES
@@ -563,3 +609,15 @@ VALUES
     (20, 40, 3, 11),
     (20, 40, 4, 15),
     (20, 40, 5, 18);
+
+    INSERT INTO public."Banner"
+(id, image, title, "subTitle", description, url, "isAvailable", "createdAt")
+VALUES(nextval('"Banner_id_seq"'::regclass), 'https://maraviyainfotech.com/projects/grabit-tailwind/grabit-tailwind/assets/img/hero-bg/5.jpg', 'Latest Exclusive Summer Collection', '30% Sale', '', '/url', true, CURRENT_TIMESTAMP);
+
+INSERT INTO public."Banner"
+(id, image, title, "subTitle", description, url, "isAvailable", "createdAt")
+VALUES(nextval('"Banner_id_seq"'::regclass), 'https://maraviyainfotech.com/projects/grabit-tailwind/grabit-tailwind/assets/img/hero-bg/6.jpg', '20 Days for best of Summer Collection', '50% Sale', '', '/url', true, CURRENT_TIMESTAMP);
+
+INSERT INTO public."Banner"
+(id, image, title, "subTitle", description, url, "isAvailable", "createdAt")
+VALUES(nextval('"Banner_id_seq"'::regclass), 'https://ik.imagekit.io/gsozk5bngn/categry/tycho-atsma-2A4CxA33aA8-unsplash_EyYugmWSo.jpg', 'New arrivals are here', 'Best choices for you', 'The new arrivals have, well, newly arrived. Check out the latest options from our summer small-batch release while they are still in stock.', '/url', true, CURRENT_TIMESTAMP);

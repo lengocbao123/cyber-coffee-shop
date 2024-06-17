@@ -1,6 +1,7 @@
 import ProductInformation from "@/components/product/ProductInformation";
 import ProductMeta from "@/components/product/ProductMeta";
 import ProductOption from "@/components/product/ProductOption";
+import ProductOptionForm from "@/components/product/ProductOptionForm";
 import ProductPolicy from "@/components/product/ProductPolicy";
 import ProductPrice from "@/components/product/ProductPrice";
 import RelatedProductList from "@/components/product/RelatedProductList";
@@ -37,10 +38,16 @@ export default async function ProductPage({
         />
       </div>
       <div className="space-y-5">
-        {product.options?.map((option) => (
-          <ProductOption key={option.id} option={option} />
-        ))}
+        {product.options && <ProductOptionForm options={product.options} />}
         <ProductPrice product={product} />
+      </div>
+      <div className="col-span-3 space-y-5 text-sm text-justify">
+        <h3 className="text-2xl font-semibold">About this product</h3>
+        {product.contents?.map((c) => (
+          <p key={c.id} className="text-sm">
+            {c.content}
+          </p>
+        ))}
       </div>
       <div className="col-span-3">
         <RelatedProductList product={product} />

@@ -29,7 +29,7 @@ model Product {
 
   contents       ProductDetail[]
   variantValue   VariantValue[]
-  options  ProductOption[]
+  options        ProductOption[]
   productVariant ProductVariant[]
   category       Category         @relation(fields: [categoryId], references: [id])
 }
@@ -72,7 +72,7 @@ model ProductVariant {
   price     Int
   quantity  Int
 
-  product      Product        @relation(fields: [productId], references: [id])
+  product       Product        @relation(fields: [productId], references: [id])
   variantValues VariantValue[]
 }
 
@@ -99,4 +99,15 @@ model ProductDetail {
   content   String   @db.Text
   createdAt DateTime @default(now())
   product   Product  @relation(fields: [productId], references: [id])
+}
+
+model Banner {
+  id          Int      @id() @default(autoincrement())
+  image       String
+  title       String
+  subTitle    String
+  description String?
+  url         String
+  isAvailable  Boolean  @default(true)
+  createdAt   DateTime @default(now())
 }
