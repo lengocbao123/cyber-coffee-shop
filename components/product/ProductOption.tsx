@@ -1,20 +1,33 @@
-import { Option } from "@/data/products";
-import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
-import { Label } from "../ui/label";
+import { Option } from '@/data/products';
+import { RadioGroup, RadioGroupItem } from '../ui/radio-group';
+import { Label } from '../ui/label';
 
-const ProductOption = ({ option }: { option: Option }) => (
+const ProductOption = ({
+  index,
+  option,
+  value,
+  onChange,
+}: {
+  index: number;
+  option: Option;
+  value: number;
+  onChange: (id: number, value: string) => void;
+}) => (
   <div className="w-full space-y-3">
     <h2 className="text-sm font-semibold capitalize">{option.name}</h2>
     <div className="flex gap-5">
-      {option.optionValue.map((value) => (
+      {option.optionValue.map(v => (
         <RadioGroup
-          key={value.id}
-          defaultValue={option.optionValue[0].id.toString()}
+          key={v.id}
+          value={value.toString()}
+          onValueChange={value => {
+            onChange(parseInt(value), v.name);
+          }}
         >
           <div className="flex items-center space-x-2">
-            <RadioGroupItem value={value.id.toString()} id={value.id.toString()} />
-            <Label className="capitalize text-xs" htmlFor={value.id.toString()}>
-              {value.name}
+            <RadioGroupItem value={v.id.toString()} id={v.id.toString()} />
+            <Label className="capitalize text-xs" htmlFor={v.id.toString()}>
+              {v.name}
             </Label>
           </div>
         </RadioGroup>

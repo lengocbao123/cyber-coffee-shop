@@ -1,9 +1,8 @@
-"use client";
+'use client';
 
-import ProductCard from "./ProductCard";
-import { useStore } from "../provider/StoreProvider";
-import { Skeleton } from "../ui/skeleton";
-import { Product, Products } from "@/data/products";
+import ProductCard from './ProductCard';
+import { Skeleton } from '../ui/skeleton';
+import { Product, Products } from '@/data/products';
 
 const ProductList = ({
   products,
@@ -16,11 +15,6 @@ const ProductList = ({
   subTitle?: string;
   isLoading?: boolean;
 }) => {
-  const store = useStore();
-  if (!store) {
-    return <div>Empty Store</div>;
-  }
-
   return (
     <div className="flex flex-col items-center px-4">
       {title && <h3 className="text-2xl font-bold">{title}</h3>}
@@ -41,14 +35,8 @@ const ProductList = ({
                 </div>
               );
             })
-          : products.map((product) => (
-              <ProductCard
-                key={product.id}
-                product={product as Product}
-                onAddToCart={() =>
-                  store.cartStore.addToCart({ ...product, quantity: 1 })
-                }
-              />
+          : products.map(product => (
+              <ProductCard key={product.id} product={product as Product} />
             ))}
       </div>
     </div>

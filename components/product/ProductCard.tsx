@@ -10,10 +10,8 @@ import { Product } from "@/data/products";
 
 const ProductCard = ({
   product,
-  onAddToCart,
 }: {
   product: Product;
-  onAddToCart?: () => void;
 }) => {
   return (
     <div className="space-y-4 shadow-lg rounded-lg overflow-hidden h-fit">
@@ -41,11 +39,6 @@ const ProductCard = ({
           </Link>
           <p className="text-sm text-muted-foreground">${product.price}</p>
         </div>
-        {onAddToCart && (
-          <Button variant="outline" size="icon" onClick={onAddToCart}>
-            <PlusCircle size={14} />
-          </Button>
-        )}
       </div>
     </div>
   );

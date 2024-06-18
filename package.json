@@ -37,6 +37,7 @@
     "react-dom": "^18",
     "react-hook-form": "^7.49.3",
     "react-slugify": "^3.0.3",
+    "sql-template-tag": "^5.2.1",
     "tailwind-merge": "^2.2.0",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^0.8.0",
